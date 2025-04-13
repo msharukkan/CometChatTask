@@ -8,10 +8,23 @@
     let fullName = "";
     let email = "";
     let company = "";
+    let emailError = "";
+
+    function validateEmail(value) {
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return pattern.test(value);
+    }
 
     function submit() {
-        alert(`Submitted by ${fullName}`);
+        if (!validateEmail(email)) {
+            emailError = "Please enter a valid email address";
+            return;
+        }
+        emailError = "";
+        // Proceed with form submission logic
+        console.log("Submitted:", { fullName, email, company });
     }
+
     let openIndex = 0;
 
     const toggle = (index) => {
@@ -45,7 +58,7 @@
             >
                 Join the CometChat partner universe
             </h1>
-            <p class="text-light/74 text-[18px] lg:text-[22px]">
+            <p class="text-light/74 text-[18px] lg:text-[22px] leading-[26px]">
                 Create value for your clients, leveraging our world-class
                 technology. Partner with us and grow your business!
             </p>
@@ -62,7 +75,7 @@
                 <form on:submit|preventDefault={submit} class="space-y-4">
                     <div class="field">
                         <label
-                            class="text-light/74 text-[16px] lg:text-[18px] font-[640]"
+                            class="text-light/74 text-[16px] font-[640] mb-1"
                             for="fullname"><span>Full name</span></label
                         >
                         <input
@@ -74,19 +87,31 @@
                     </div>
                     <div class="field">
                         <label
-                            class="text-light/74 text-[16px] lg:text-[18px] font-[640]"
+                            class="text-light/74 text-[16px] font-[640] mb-1"
                             for="email"><span>Email address </span></label
                         >
-                        <input
-                            type="text"
-                            placeholder="Type your emailsomething..."
-                            bind:value={email}
-                            class="w-full px-4 py-2.5 text-light/64 placeholder-gray-300 focus:outline-none bg-light/1 rounded-xl border-1 border-light/4 focus:border-brand"
-                        />
+                        <div class="relative">
+                            <span
+                                class="absolute left-4 top-1/2 -translate-y-1/2 text-light/50"
+                            >
+                                <Icon name="mail" />
+                            </span>
+                            <input
+                                type="text"
+                                placeholder="Type your emailsomething..."
+                                bind:value={email}
+                                class="w-full pl-10 px-4 py-2.5 text-light/64 placeholder-gray-300 focus:outline-none bg-light/1 rounded-xl border-1 border-light/4 focus:border-brand"
+                            />
+                        </div>
+                        {#if emailError}
+                            <p class="text-red-500 text-sm mt-1">
+                                {emailError}
+                            </p>
+                        {/if}
                     </div>
                     <div class="field">
                         <label
-                            class="text-light/74 text-[16px] lg:text-[18px] font-[640]"
+                            class="text-light/74 text-[16px] font-[640] mb-1"
                             for="company"><span>Companies name</span></label
                         >
                         <input
@@ -103,7 +128,6 @@
                         >Submit application</button
                     >
                 </form>
-
             </div>
             <div class="glow-overlay"></div>
             <!-- Decorative Starts -->
