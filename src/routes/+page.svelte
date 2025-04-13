@@ -428,10 +428,10 @@
         class="hidden lg:block absolute w-full h-full overflow-hidden z-0 left-0 top-0"
     >
         <div
-            class="absolute bg-gradient-to-b from-[#FCB8A8] via-[#B968A4] to-[#756CF6] rounded-full w-[500px] h-[500px] top-50 -left-[250px] transition animate-pulse blur-3xl opacity-60 backdrop-blur-md"
+            class="absolute bg-gradient-to-b from-[#FCB8A8] via-[#B968A4] to-[#756CF6] rounded-full w-[500px] h-[500px] top-50 -left-[250px] transition animate-spin blur-3xl opacity-20 backdrop-blur-md"
         ></div>
         <div
-            class="absolute bg-gradient-to-b from-[#FCB8A8] via-[#B968A4] to-[#756CF6] rounded-full w-[500px] h-[500px] top-50 -right-[250px] transition animate-pulse blur-3xl pulse-delay-1 opacity-60 backdrop-blur-md"
+            class="absolute bg-gradient-to-b from-[#FCB8A8] via-[#B968A4] to-[#756CF6] rounded-full w-[500px] h-[500px] top-50 -right-[250px] transition animate-spin blur-3xl pulse-delay-1 opacity-20 backdrop-blur-md"
         ></div>
     </div>
 </section>

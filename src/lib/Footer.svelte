@@ -73,26 +73,26 @@
   >
     <div class="w-full md:w-auto flex gap-4 items-center">
       <span>2023 © CometChat</span>
-      <a href="#" class="hover:underline">Terms of Use</a>
-      <a href="#" class="hover:underline">Privacy Policy</a>
+      <a href="#" class=" opacity-74 hover:opacity-100">Terms of Use</a>
+      <a href="#" class=" opacity-74 hover:opacity-100">Privacy Policy</a>
     </div>
 
     <div
       class="flex gap-3 flex-wrap md:flex-row items-center space-x-6 mb-4 lg:mt-0"
     >
-      <a href="#" class="inline-flex items-center gap-1 hover:underline">
+      <a href="#" class="inline-flex items-center gap-1 opacity-74 hover:opacity-100">
         <Icon name={"facebook"} size="4" color="text-light" /> Facebook
       </a>
-      <a href="#" class="inline-flex items-center gap-1 hover:underline">
+      <a href="#" class="inline-flex items-center gap-1  opacity-74 hover:opacity-100">
         <Icon name={"linkedin"} size="4" color="text-light" /> LinkedIn
       </a>
-      <a href="#" class="inline-flex items-center gap-1 hover:underline">
+      <a href="#" class="inline-flex items-center gap-1  opacity-74 hover:opacity-100">
         <Icon name={"insta"} size="4" color="text-light" /> Instagram
       </a>
-      <a href="#" class="inline-flex items-center gap-1 hover:underline">
+      <a href="#" class="inline-flex items-center gap-1  opacity-74 hover:opacity-100">
         <Icon name={"twitter"} size="4" color="text-light" /> Twitter
       </a>
-      <a href="#" class="inline-flex items-center gap-1 hover:underline">
+      <a href="#" class="inline-flex items-center gap-1  opacity-74 hover:opacity-100">
         <Icon name={"github"} size="4" color="text-light" /> GitHub
       </a>
     </div>
