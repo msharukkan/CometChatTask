@@ -5,6 +5,10 @@
 
     let scrolled = false;
 
+    onMount(async () => {
+        const module = await import("$lib/glowEffect.js");
+        module.initGlowEffect();
+    });
     onMount(() => {
         const handleScroll = () => {
             scrolled = window.scrollY > 10;
@@ -65,42 +69,57 @@
             <div class="hidden lg:flex lg:gap-x-12">
                 <a
                     href="#"
-                    class="text-sm/6 font-semibold text-white hover:text-brand-600"
-                    >Platform</a
+                    class="text-sm/6 font-semibold text-white hover:text-brand-600 group relative"
+                    >Platform
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-gradient-to-r from-[#FCB8A8] via-[#B968A4] to-[#756CF6] group-hover:w-full"
+                    ></span></a
                 >
                 <a
                     href="#"
-                    class="text-sm/6 font-semibold text-white hover:text-brand-600"
-                    >Solutions</a
+                    class="text-sm/6 font-semibold text-white hover:text-brand-600 group relative"
+                    >Solutions<span
+                        class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-gradient-to-r from-[#FCB8A8] via-[#B968A4] to-[#756CF6] group-hover:w-full"
+                    ></span></a
                 >
                 <a
                     href="#"
-                    class="text-sm/6 font-semibold text-white hover:text-brand-600"
-                    >Developers</a
+                    class="text-sm/6 font-semibold text-white hover:text-brand-600 group relative"
+                    >Developers<span
+                        class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-gradient-to-r from-[#FCB8A8] via-[#B968A4] to-[#756CF6] group-hover:w-full"
+                    ></span></a
                 >
                 <a
                     href="#"
-                    class="text-sm/6 font-semibold text-white hover:text-brand-600"
-                    >Resources</a
+                    class="text-sm/6 font-semibold text-white hover:text-brand-600 group relative"
+                    >Resources<span
+                        class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-gradient-to-r from-[#FCB8A8] via-[#B968A4] to-[#756CF6] group-hover:w-full"
+                    ></span></a
                 >
                 <a
                     href="#"
-                    class="text-sm/6 font-semibold text-white hover:text-brand-600"
-                    >Pricing</a
+                    class="text-sm/6 font-semibold text-white hover:text-brand-600 group relative"
+                    >Pricing<span
+                        class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-gradient-to-r from-[#FCB8A8] via-[#B968A4] to-[#756CF6] group-hover:w-full"
+                    ></span></a
                 >
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-2">
                 <button
                     type="button"
-                    class="inline-flex items-center justify-center rounded-md p-2.5 text-sm/6 font-semibold text-white"
+                    class="inline-flex items-center justify-center rounded-md p-2.5 text-sm/6 font-semibold text-white group relative"
                 >
                     Login
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-gradient-to-r from-[#FCB8A8] via-[#B968A4] to-[#756CF6] group-hover:w-full"
+                    ></span>
                 </button>
                 <button
                     type="button"
                     class="bg-brand text-light px-4 py-2.5 rounded-xl hover:bg-brand/60 transition transition-discrete font-semibold text-[14px]"
                 >
                     Schedule a demo
+                    <div class="glow-overlay"></div>
                 </button>
             </div>
         </div>
@@ -148,8 +167,8 @@
                             <a
                                 href="#"
                                 class="-mx-3 block rounded-xl px-3 py-2 font-semibold text-light"
-                                >Products</a
-                            >
+                                >Platform
+                            </a>
                             <a
                                 href="#"
                                 class="-mx-3 block rounded-xl px-3 py-2 font-semibold text-light"

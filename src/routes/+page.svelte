@@ -17,6 +17,13 @@
     const toggle = (index) => {
         openIndex = openIndex === index ? -1 : index;
     };
+
+    import { onMount } from "svelte";
+
+    onMount(async () => {
+        const module = await import("$lib/glowEffect.js");
+        module.initGlowEffect();
+    });
 </script>
 
 <svelte:head>
@@ -43,7 +50,7 @@
                 technology. Partner with us and grow your business!
             </p>
         </div>
-        <div class="relative w-full lg:w-[528px]">
+        <div class="relative w-full lg:w-[528px] glow-capture">
             <div
                 class="relative z-10 mt-8 md:mt-0 lg:p-8 bg-light/8 backdrop-blur-3xl p-4 rounded-3xl border-1 border-light/4"
             >
@@ -96,7 +103,9 @@
                         >Submit application</button
                     >
                 </form>
+
             </div>
+            <div class="glow-overlay"></div>
             <!-- Decorative Starts -->
             <div
                 class="hidden md:flex absolute bottom-[10px] -left-[40px] w-[80px] h-[80px] z-0 blur-2xl animate-pulse opacity-80"
@@ -343,7 +352,7 @@
     </div>
 </section>
 <section class="relative overflow-hidden py-10 lg:py-24 bg-light px-6">
-    <div class="max-w-3xl mx-auto lg:text-center">
+    <div class="max-w-3xl mx-auto lg:text-center z-1 relative">
         <p class="text-[18px] lg:text-[22px] text-orange font-semibold mb-2">
             FAQ’s
         </p>
@@ -356,7 +365,7 @@
         {#each faqs as faq, i}
             <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions (because of reasons) -->
             <div
-                class="bg-dark/2 border-1 border-[#14131D0A] rounded-2xl p-6 mb-4 cursor-pointer transition ease-in hover:shadow-lg z-1"
+                class="bg-dark/2 border-1 border-[#14131D0A] rounded-2xl p-6 mb-4 cursor-pointer transition ease-in hover:shadow-lg"
                 on:click={() => toggle(i)}
             >
                 <div class="flex justify-between items-center">

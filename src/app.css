@@ -10,6 +10,7 @@
   --color-grey: #14131D;
   --color-light: #FAFAFF;
   --color-dark: #0A0914;
+  --glow-color: #6852D6; 
 }
 
 
@@ -56,4 +57,24 @@
 
 .pulse-delay-4 {
   animation-delay: 1.2s;
+}
+
+.glow-capture {
+  position: relative;
+}
+
+.glow-overlay {
+  --glow-size: 25rem;
+  filter: blur(40px);
+  mix-blend-mode: screen;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--glow-opacity, 0);
+  mask: radial-gradient(var(--glow-size) var(--glow-size) at var(--glow-x) var(--glow-y),
+      var(--glow-color) 1%,
+      transparent 50%);
+  transition: 400ms mask ease;
+  will-change: mask;
 }
